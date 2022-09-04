@@ -13,8 +13,9 @@ public class TestLog {
         try {
             Integer.valueOf("hishfi");
         } catch (Exception ex) {
+            _Logger.info("this is info");
             _Logger.error(ex.getMessage(), ex);
-            System.err.println(ex.getStackTrace().toString());
+            _Logger.debug("this is error");
         }
     }
 
@@ -26,9 +27,9 @@ public class TestLog {
         return new Object();
     }
     public static void main(String[] args) {
-        for(int i = 0; i < 10_000_000; i++) {
+        for(int i = 0; i < 10; i++) {
             MyThreadPool.Instance.asynTestLog();
         }
-        
     }
 }
+
